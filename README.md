@@ -199,4 +199,4 @@ JsonValue.dictionValue
 JsonValue.values
 ```
 
-Can convert to any type when in use
+To convert any type when in use
