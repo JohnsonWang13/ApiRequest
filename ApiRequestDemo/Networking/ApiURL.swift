@@ -11,8 +11,7 @@ import Foundation
 // MARK: Api Protocol
 protocol ApiKey {
     var keys: [String] { get }
-    var idForKeys: [Any?] { get }
-    // Domain/key1/idForKeys1/key2/idForKeys2
+    var parametersForKeys: [Any?] { get }
     var httpMethod: HTTPMethod { get }
     var contentType: ContentType { get }
     var apiVersion: String { get }
@@ -33,7 +32,7 @@ enum ApiKeySearch: ApiKey {
         }
     }
     
-    var idForKeys: [Any?] {
+    var parametersForKeys: [Any?] {
         switch self {
         case .searchUser: return []
         }

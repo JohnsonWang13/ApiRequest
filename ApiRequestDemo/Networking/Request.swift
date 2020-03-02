@@ -14,13 +14,6 @@ import Photos
     
     @objc static var shared = Request()
     
-    var index = 0
-    var campaignIndex = 0
-    var detectIndex = 0
-    
-    private var lastCheckTime: Double = 0
-    private(set) var apiResponseTime: Int = 9999
-    
     private var requestingUrl = Set<String>()
     
     func api(from api: ApiKey, parameter: [String: Any]? = nil, isConcurrency: Bool = false) -> Observable<ResponseState<NSDictionary>> {
@@ -31,8 +24,8 @@ import Photos
                 if !api.keys[i].isEmpty {
                     urlString.append("/\(api.keys[i])")
                 }
-                if api.idForKeys.count > i {
-                    if let key = api.idForKeys[i] {
+                if api.parametersForKeys.count > i {
+                    if let key = api.parametersForKeys[i] {
                         urlString.append("/\(key)")
                     }
                 }
@@ -65,8 +58,8 @@ import Photos
             
             for i in 0..<api.keys.count {
                 urlString.append("/\(api.keys[i])")
-                if api.idForKeys.count > i {
-                    if let key = api.idForKeys[i] {
+                if api.parametersForKeys.count > i {
+                    if let key = api.parametersForKeys[i] {
                         urlString.append("/\(key)")
                     }
                 }
