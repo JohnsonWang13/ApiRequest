@@ -49,7 +49,7 @@ enum CustomApiKey: ApiKey {
 }
 ```
 
-###### API URL
+#### API URL
 Url: Domain/v1/key1/parameter1/key2/parameter2
 
 
@@ -118,7 +118,7 @@ Handler will decode and classify success or failure
 CustomDecodable model must adopt Decodable protocol
 
 
-###### Any type in Decodable
+#### Any type in Decodable
 
 JsonValue is a type for any type in Decodable
 
