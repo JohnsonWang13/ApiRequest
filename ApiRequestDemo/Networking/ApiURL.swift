@@ -28,7 +28,6 @@ enum ApiKeySearch: ApiKey {
     var keys: [String] {
         switch self {
         case .searchUser: return ["search","users"]
-            
         }
     }
     
